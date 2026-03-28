@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: keyword-analyzer
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: NAVER_AD_CUSTOMER_ID
+        sync: false
+      - key: NAVER_AD_API_LICENSE
+        sync: false
+      - key: NAVER_AD_API_SECRET
+        sync: false
