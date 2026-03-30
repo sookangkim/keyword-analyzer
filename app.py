@@ -179,10 +179,42 @@ tbody tr.row-C { border-left:3px solid #e5e5e5; }
 .note { font-size:11px; color:#bbb; margin-top:16px; }
 
 @media(max-width:768px){
-  .header,.summary,.content { padding-left:16px; padding-right:16px; }
-  .search-bar input { max-width:100%; }
-  .stat-card { min-width:90px; padding:10px 14px; }
-  .stat-card .num { font-size:16px; }
+  .header { padding:20px 16px 18px; }
+  .header h1 { font-size:18px; }
+  .header p { font-size:11px; }
+  .search-bar { flex-direction:column; gap:8px; }
+  .search-bar input { max-width:100%; min-width:auto; font-size:16px; padding:12px 14px; }
+  .search-bar button { width:100%; padding:13px; font-size:14px; }
+  .summary { padding:12px 16px; gap:8px; }
+  .stat-card { flex:1; min-width:calc(33% - 8px); padding:10px 8px; }
+  .stat-card .num { font-size:15px; }
+  .stat-card .label { font-size:10px; }
+  .content { padding:16px; }
+  .legend { font-size:10px; gap:4px; }
+  .legend span { padding:2px 6px; font-size:10px; }
+  .note { font-size:10px; }
+
+  /* 테이블 → 카드형 변환 */
+  table, thead, tbody, th, td, tr { display:block; }
+  thead { display:none; }
+  tbody tr {
+    background:#fff; border:1px solid #eee; border-radius:8px;
+    padding:14px; margin-bottom:10px; border-left:3px solid #e5e5e5;
+  }
+  tbody tr.row-S { border-left-color:#16a34a; }
+  tbody tr.row-A { border-left-color:#2563eb; }
+  tbody tr.row-B { border-left-color:#d97706; }
+  tbody td { padding:3px 0; border:none; font-size:13px; display:flex; justify-content:space-between; }
+  tbody td::before { font-weight:600; color:#888; font-size:11px; }
+  tbody td:nth-child(1)::before { content:'등급'; }
+  tbody td:nth-child(2)::before { content:'키워드'; }
+  tbody td:nth-child(3)::before { content:'PC'; }
+  tbody td:nth-child(4)::before { content:'모바일'; }
+  tbody td:nth-child(5)::before { content:'합계'; }
+  tbody td:nth-child(6)::before { content:'경쟁강도'; }
+  tbody td:nth-child(7)::before { content:'모바일비중'; }
+  tbody td.col-num, tbody td.col-comp, tbody td.col-grade { text-align:right; }
+  tbody td.col-keyword { font-size:14px; font-weight:600; }
 }
 </style>
 </head>
